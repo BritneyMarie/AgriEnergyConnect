@@ -1,0 +1,310 @@
+:root {
+    --agri-green: #5b7a2f;
+    --agri-green-dark: #4a6625;
+    --agri-brown: #6b5b3a;
+    --agri-brown-light: #8b7355;
+    --agri-yellow: #c5a834;
+    --agri-yellow-light: #d4b940;
+    --agri-bg: #fafaf5;
+    --agri-card-border: #c5d89a;
+    --agri-card-top: #b8cc45;
+    --agri-header-bg: #e8efd5;
+    --agri-text: #4a4a3a;
+    --agri-muted: #7a7a6a;
+    --agri-red: #c0392b;
+}
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html { font-size: 16px; }
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: var(--agri-bg);
+    color: var(--agri-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar-agri {
+    background-color: var(--agri-green) !important;
+    padding: 0.6rem 1rem;
+}
+
+.navbar-agri .navbar-brand {
+    color: white !important;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.navbar-agri .nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 500;
+}
+
+.navbar-agri .nav-link:hover {
+    color: white !important;
+}
+
+/* Page titles */
+.page-title {
+    color: var(--agri-green);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.page-subtitle {
+    color: var(--agri-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Agri cards */
+.agri-card {
+    background: white;
+    border: 1px solid var(--agri-card-border);
+    border-top: 4px solid var(--agri-card-top);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.agri-card-title {
+    color: var(--agri-brown);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Buttons */
+.btn-agri-green {
+    background-color: var(--agri-green);
+    border-color: var(--agri-green);
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+}
+
+.btn-agri-green:hover {
+    background-color: var(--agri-green-dark);
+    border-color: var(--agri-green-dark);
+    color: white;
+}
+
+.btn-agri-yellow {
+    background-color: var(--agri-yellow);
+    border-color: var(--agri-yellow);
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+}
+
+.btn-agri-yellow:hover {
+    background-color: var(--agri-yellow-light);
+    border-color: var(--agri-yellow-light);
+    color: white;
+}
+
+.btn-agri-outline {
+    background-color: white;
+    border: 2px solid var(--agri-green);
+    color: var(--agri-green);
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 0.35rem 1rem;
+}
+
+.btn-agri-outline:hover {
+    background-color: var(--agri-green);
+    color: white;
+}
+
+.btn-agri-danger {
+    background-color: var(--agri-red);
+    border-color: var(--agri-red);
+    color: white;
+    border-radius: 6px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+}
+
+/* Tables */
+.agri-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.agri-table thead th {
+    background-color: var(--agri-header-bg);
+    color: var(--agri-brown);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 2px solid var(--agri-card-border);
+}
+
+.agri-table tbody td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.agri-table tbody tr:hover {
+    background-color: #f5f8ed;
+}
+
+/* Search bar */
+.agri-search {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.agri-search input {
+    border: 2px solid var(--agri-card-border);
+    border-radius: 6px;
+    padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+    width: 100%;
+}
+
+.agri-search input:focus {
+    border-color: var(--agri-green);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(91, 122, 47, 0.15);
+}
+
+.agri-search-btn {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background-color: var(--agri-green);
+    border: none;
+    color: white;
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+}
+
+/* Form labels */
+.agri-label {
+    color: var(--agri-brown);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.agri-input {
+    border: 2px solid var(--agri-card-border);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+}
+
+.agri-input:focus {
+    border-color: var(--agri-green);
+    box-shadow: 0 0 0 2px rgba(91, 122, 47, 0.15);
+}
+
+.agri-help {
+    color: var(--agri-muted);
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+/* Category badge */
+.badge-agri {
+    background-color: var(--agri-green);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer-agri {
+    border-top: 1px solid var(--agri-card-border);
+    padding: 1rem 0;
+    color: var(--agri-muted);
+    font-size: 0.85rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--agri-bg);
+}
+
+.footer-agri a {
+    color: var(--agri-green);
+}
+
+/* Table info bar */
+.agri-info {
+    color: var(--agri-muted);
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+}
+
+/* Tractor icon placeholder */
+.tractor-icon {
+    width: 80px;
+    height: 80px;
+    opacity: 0.4;
+}
+
+/* Profile card */
+.profile-header {
+    background-color: var(--agri-header-bg);
+    padding: 0.75rem 1rem;
+    border-radius: 6px 6px 0 0;
+    font-weight: 700;
+    color: var(--agri-brown);
+    border-bottom: 2px solid var(--agri-card-top);
+}
+
+/* Action buttons group */
+.action-btns .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    margin-right: 2px;
+}
+
+/* Privacy notice at bottom of forms */
+.privacy-notice {
+    text-align: center;
+    color: var(--agri-muted);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #eee;
+}
+
+.privacy-notice a {
+    color: var(--agri-green);
+}
+
+/* Fix Identity pages */
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav { flex-direction: column; }
+    .agri-table { font-size: 0.85rem; }
+}

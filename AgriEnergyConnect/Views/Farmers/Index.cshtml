@@ -1,0 +1,58 @@
+@model IEnumerable<Farmer>
+
+@{
+    ViewData["Title"] = "Farmers";
+}
+
+<h1 class="page-title">&#x1F69C; Farmers Directory</h1>
+<p class="page-subtitle">Manage all registered farmers in our sustainable network</p>
+
+<a asp-action="Create" class="btn btn-agri-green mb-3">&#x2795; Register New Farmer</a>
+
+<div class="agri-card">
+    <div class="agri-card-title">&#x1F465; Current Farmers</div>
+
+    <form method="get" class="agri-search mb-3">
+        <input type="text" name="search" placeholder="Search farmers..." value="@ViewBag.Search" />
+        <button type="submit" class="agri-search-btn">&#x1F50D;</button>
+    </form>
+
+    <table class="agri-table">
+        <thead>
+            <tr>
+                <th>&#x1F464; Farmer Name</th>
+                <th>&#x2709; Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ContactPerson</td>
+                        <td><a href="mailto:@item.Email" style="color: var(--agri-green);">@item.Email</a></td>
+                        <td class="action-btns">
+                            <a asp-action="Details" asp-route-id="@item.FarmerId" class="btn btn-agri-outline btn-sm" title="View">&#x1F441;</a>
+                            <a asp-action="Details" asp-route-id="@item.FarmerId" class="btn btn-agri-outline btn-sm" title="Details">&#x2139;</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center py-3" style="color: var(--agri-muted);">No farmers found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <span class="agri-info">&#x2139; Showing @Model.Count() registered farmers</span>
+        <a asp-action="Create" class="btn btn-agri-yellow btn-sm">&#x2795; Add Another Farmer</a>
+    </div>
+</div>
+
+@await Html.PartialAsync("_Pagination")

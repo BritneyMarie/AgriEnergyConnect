@@ -1,0 +1,91 @@
+@model Farmer
+
+@{
+    ViewData["Title"] = "Farmer Details";
+}
+
+<h1 class="page-title">&#x1F4CB; Farmer Details</h1>
+<p class="page-subtitle">View complete information for this farmer</p>
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="agri-card">
+            <div class="profile-header">&#x1F464; @Model.ContactPerson's Profile</div>
+            <div class="p-3">
+                <div class="d-flex justify-content-between">
+                    <table style="width: 70%;">
+                        <tr>
+                            <td class="py-2" style="width:40%;"><strong class="agri-label">&#x1F464; Full Name</strong></td>
+                            <td class="py-2">@Model.ContactPerson</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2"><strong class="agri-label">&#x2709; Email</strong></td>
+                            <td class="py-2"><a href="mailto:@Model.Email" style="color: var(--agri-green);">@Model.Email</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2"><strong class="agri-label">&#x1F3E1; Farm</strong></td>
+                            <td class="py-2">@Model.FarmName</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2"><strong class="agri-label">&#x1F4DE; Phone</strong></td>
+                            <td class="py-2">@Model.PhoneNumber</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2"><strong class="agri-label">&#x1F4CD; Address</strong></td>
+                            <td class="py-2">@Model.Address</td>
+                        </tr>
+                    </table>
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" class="tractor-icon">
+                            <circle cx="25" cy="65" r="13" fill="none" stroke="#8b7355" stroke-width="4"/>
+                            <circle cx="25" cy="65" r="5" fill="#8b7355"/>
+                            <circle cx="72" cy="58" r="18" fill="none" stroke="#8b7355" stroke-width="4"/>
+                            <circle cx="72" cy="58" r="7" fill="#8b7355"/>
+                            <path d="M15 52 L15 35 Q15 30 20 30 L50 30 L55 20 L70 20 L70 42" fill="none" stroke="#8b7355" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="50" y1="30" x2="50" y2="20" stroke="#8b7355" stroke-width="3"/>
+                            <line x1="15" y1="52" x2="55" y2="52" stroke="#8b7355" stroke-width="3"/>
+                            <rect x="60" y="10" width="15" height="10" rx="2" fill="none" stroke="#8b7355" stroke-width="3"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-2 pb-2">
+                <a asp-action="Index" class="btn btn-agri-outline">&larr; Back to Farmers</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model.Products != null && Model.Products.Any())
+{
+    <div class="row mt-3">
+        <div class="col-md-7">
+            <div class="agri-card">
+                <div class="agri-card-title">&#x1F33E; Products by @Model.ContactPerson</div>
+                <table class="agri-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.Products)
+                        {
+                            <tr>
+                                <td>@product.Name</td>
+                                <td><span class="badge-agri">@product.Category</span></td>
+                                <td>@product.ProductionDate.ToString("MM/dd/yyyy")</td>
+                                <td>@product.Price.ToString("C")</td>
+                                <td>@product.Quantity</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

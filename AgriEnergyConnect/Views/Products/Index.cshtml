@@ -1,0 +1,67 @@
+@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1 class="page-title">&#x1F33F; Agricultural Products</h1>
+<p class="page-subtitle">Manage and view all farm products in our sustainable network</p>
+
+@if (User.IsInRole("Farmer"))
+{
+    <a asp-action="Create" class="btn btn-agri-green mb-3">&#x2795; Add New Product</a>
+}
+
+<div class="agri-card">
+    <div class="agri-card-title">&#x1F33E; Current Product Inventory</div>
+
+    <form method="get" class="agri-search mb-3">
+        <input type="text" name="categoryFilter" placeholder="Search products..." value="@ViewBag.CategoryFilter" />
+        <button type="submit" class="agri-search-btn">&#x1F50D;</button>
+    </form>
+
+    <table class="agri-table">
+        <thead>
+            <tr>
+                <th>&#x1F4A7; Product Name</th>
+                <th>&#x2630; Category</th>
+                <th>&#x1F4C5; Production Date</th>
+                <th>&#x1F464; Farmer Profile</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td><span class="badge-agri">@item.Category</span></td>
+                        <td>@item.ProductionDate.ToString("MM/dd/yyyy")</td>
+                        <td>@item.Farmer?.FarmName</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-agri-outline btn-sm">Details</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center py-3" style="color: var(--agri-muted);">No products found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <span class="agri-info">&#x2139; Showing @Model.Count() products in inventory</span>
+        @if (User.IsInRole("Farmer"))
+        {
+            <a asp-action="Create" class="btn btn-agri-yellow btn-sm">&#x2795; Add Another Product</a>
+        }
+    </div>
+</div>
+
+@await Html.PartialAsync("_Pagination")

@@ -1,0 +1,66 @@
+@model Farmer
+
+@{
+    ViewData["Title"] = "Register Farmer";
+}
+
+<h1 class="page-title">&#x1F464;+ Register New Farmer</h1>
+<p class="page-subtitle">Add a farmer to our sustainable agricultural network</p>
+
+<a asp-action="Index" class="btn btn-agri-outline mb-3">&larr; Back to Farmers</a>
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="agri-card">
+            <div class="agri-card-title">&#x1F4CB; Farmer Details</div>
+
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="ContactPerson" class="agri-label">&#x1F464; Full Name</label>
+                    <input asp-for="ContactPerson" class="form-control agri-input" placeholder="Enter farmer's full name" />
+                    <span asp-validation-for="ContactPerson" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="agri-label">&#x2709; Email Address</label>
+                    <input asp-for="Email" class="form-control agri-input" placeholder="farmer@example.com" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <div class="agri-help">This will be used for account communication</div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="FarmName" class="agri-label">&#x1F3E1; Farm Name</label>
+                    <input asp-for="FarmName" class="form-control agri-input" placeholder="Enter farm name" />
+                    <span asp-validation-for="FarmName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PhoneNumber" class="agri-label">&#x1F4DE; Phone Number</label>
+                    <input asp-for="PhoneNumber" class="form-control agri-input" placeholder="Enter phone number" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Address" class="agri-label">&#x1F4CD; Address</label>
+                    <input asp-for="Address" class="form-control agri-input" placeholder="Enter farm address" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-agri-green">&#x2714; Register Farmer</button>
+                    <button type="reset" class="btn btn-agri-outline">&#x1F504; Clear Form</button>
+                </div>
+
+                <div class="privacy-notice">
+                    &#x1F512; All farmer information is protected under our <a asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

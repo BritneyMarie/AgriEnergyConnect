@@ -1,0 +1,47 @@
+@model Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1 class="page-title">&#x1F33F; Product Details</h1>
+<p class="page-subtitle">View complete information for this product</p>
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="agri-card">
+            <div class="profile-header">@Model.Name</div>
+            <div class="p-3">
+                <table class="w-100">
+                    <tr>
+                        <td class="py-2" style="width:40%;"><strong class="agri-label">&#x2630; Category</strong></td>
+                        <td class="py-2"><span class="badge-agri">@Model.Category</span></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2"><strong class="agri-label">&#x1F4C5; Production Date</strong></td>
+                        <td class="py-2">@Model.ProductionDate.ToString("MM/dd/yyyy")</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2"><strong class="agri-label">&#x1F4DD; Description</strong></td>
+                        <td class="py-2">@Model.Description</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2"><strong class="agri-label">&#x1F4B0; Price</strong></td>
+                        <td class="py-2">@Model.Price.ToString("C")</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2"><strong class="agri-label">&#x1F4E6; Quantity</strong></td>
+                        <td class="py-2">@Model.Quantity</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2"><strong class="agri-label">&#x1F464; Farmer</strong></td>
+                        <td class="py-2">@Model.Farmer?.FarmName</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="text-center mt-2">
+                <a asp-action="Index" class="btn btn-agri-outline">&larr; Back to Products</a>
+            </div>
+        </div>
+    </div>
+</div>
