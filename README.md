@@ -27,7 +27,7 @@ A web application connecting farmers with renewable energy solutions through an 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/AgriEnergyConnect.git
+   git clone https://github.com/BritneyMarie/AgriEnergyConnect.git
    cd AgriEnergyConnect
    ```
 
@@ -145,7 +145,7 @@ All read queries use `AsNoTracking()` for reduced memory overhead.
 
 ## Documentation
 
-Full project documentation is available on [GitHub Pages](https://YOUR_USERNAME.github.io/AgriEnergyConnect/), including:
+Full project documentation is available on [GitHub Pages](https://BritneyMarie.github.io/AgriEnergyConnect/), including:
 
 - System architecture and design decisions
 - Database schema and entity relationships

@@ -20,7 +20,7 @@ title: Deployment Guide
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/AgriEnergyConnect.git
+   git clone https://github.com/BritneyMarie/AgriEnergyConnect.git
    cd AgriEnergyConnect
    ```
 

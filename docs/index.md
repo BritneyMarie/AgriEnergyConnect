@@ -33,7 +33,7 @@ AgriEnergyConnect is a web application connecting farmers with renewable energy 
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/AgriEnergyConnect.git
+git clone https://github.com/BritneyMarie/AgriEnergyConnect.git
 cd AgriEnergyConnect
 
 # Build and run
